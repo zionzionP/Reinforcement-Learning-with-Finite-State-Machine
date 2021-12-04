@@ -7,19 +7,22 @@ using UnityEngine.AI;
 public class StateController : MonoBehaviour
 {
     [HideInInspector] public NavMeshAgent navMeshAgent;
+    [HideInInspector] public StateMachineAgent stateMachineAgent;
     public State currentState;
     public Transform goal;
     public Transform goal2;
     public Transform Agent;
+    public Transform Startpoint;
     public State remainState;
 
 
-    private bool aiActive;
+    
 
 
     void Awake()
     {
-        navMeshAgent = GetComponent<NavMeshAgent>();        
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        stateMachineAgent = GetComponent<StateMachineAgent>();
     }
 
     
@@ -36,4 +39,8 @@ public class StateController : MonoBehaviour
             currentState = nextState;
         }
     }
+
+    
+
+    
 }

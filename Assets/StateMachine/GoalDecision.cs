@@ -13,14 +13,13 @@ public class GoalDecision : Decision
 
     private bool ReachGoal(StateController controller)
     {
-        if ((controller.Agent.position - controller.goal.position).sqrMagnitude <1 )
+        if (controller.stateMachineAgent.targetOnTriggerEnter)
         {
-            Debug.Log("targetoff state");
+            controller.stateMachineAgent.targetOnTriggerEnter = false;
             return true;
         }
         else
-        {
-            Debug.Log("targeton state");            
+        {                 
             return false;
         }
     }

@@ -13,14 +13,12 @@ public class GoalDecision2 : Decision
 
     private bool ReachGoal(StateController controller)
     {
-        if ((controller.Agent.position - controller.goal2.position).sqrMagnitude < 1)
+        if ((controller.Agent.position - controller.goal2.position).sqrMagnitude < 4f)
         {
-            Debug.Log("targeton state");
             return true;
         }
         else
         {
-            Debug.Log("targetoff state");
             return false;
         }
     }
